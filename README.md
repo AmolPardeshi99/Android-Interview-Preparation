@@ -931,6 +931,10 @@ When your orientation changes, you don't have to manually change to the landscap
 
 Basically, whenever Android destroys and recreates your Activity for orientation change, it calls `onSaveInstanceState()` before destroying and calls `onCreate()` after recreating. Whatever you save in the bundle in onSaveInstanceState, you can get back from the `onCreate()` parameter.
 
+<activity android:name=".MyActivity"
+          android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+          android:label="@string/app_name">
+
 ```java
 private TextView mTextView;
 private static final String KEY_TEXT_VALUE = "textValue";
